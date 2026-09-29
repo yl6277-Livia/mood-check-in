@@ -1,0 +1,158 @@
+/* Keep padding and borders inside an element's width. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background-color: #f2f0eb;
+  color: #293b36;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.4s ease;
+}
+
+.card {
+  width: 100%;
+  max-width: 580px;
+  padding: 44px 32px;
+  border: 1px solid #e0e5df;
+  border-radius: 24px;
+  background-color: #ffffff;
+  text-align: center;
+  box-shadow: 0 12px 40px #293b3610;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: #536b60;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.intro, .note {
+  color: #606b65;
+}
+
+.mood-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 28px 0;
+}
+
+button {
+  padding: 12px 20px;
+  border: 1px solid #b8c7be;
+  border-radius: 12px;
+  background-color: #f7f9f6;
+  color: #293b36;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: 0 0 0 2px currentColor;
+}
+
+.mood-buttons button[aria-pressed="true"] {
+  color: #ffffff;
+  box-shadow: 0 3px 0 #293b3630;
+}
+
+button:focus-visible {
+  outline: 3px solid #355d4b;
+  outline-offset: 4px;
+}
+
+#message {
+  min-height: 80px;
+  margin: 0;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #f5f6f2;
+  border-left: 4px solid #b8c7be;
+}
+
+/* Calm: soft green, like a quiet moment outdoors. */
+body[data-mood="calm"] {
+  background-color: #dceee3;
+}
+
+button[data-mood="calm"],
+body[data-mood="calm"] #message {
+  background-color: #edf7f0;
+  border-color: #347052;
+  color: #28583f;
+}
+
+button[data-mood="calm"][aria-pressed="true"] {
+  background-color: #347052;
+}
+
+/* Overwhelmed: warm peach with a grounding terracotta accent. */
+body[data-mood="overwhelmed"] {
+  background-color: #f5dfd2;
+}
+
+button[data-mood="overwhelmed"],
+body[data-mood="overwhelmed"] #message {
+  background-color: #fff1e8;
+  border-color: #a14e32;
+  color: #853f29;
+}
+
+button[data-mood="overwhelmed"][aria-pressed="true"] {
+  background-color: #a14e32;
+}
+
+/* Tired: restful lavender with a dusk-purple accent. */
+body[data-mood="tired"] {
+  background-color: #e3dff2;
+}
+
+button[data-mood="tired"],
+body[data-mood="tired"] #message {
+  background-color: #f2effa;
+  border-color: #68558f;
+  color: #554477;
+}
+
+button[data-mood="tired"][aria-pressed="true"] {
+  background-color: #68558f;
+}
+
+.note {
+  margin: 24px 0 0;
+  font-size: 13px;
+}
+
+/* Use a little less space on small screens. */
+@media (max-width: 400px) {
+  .card {
+    padding: 32px 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mood Check-In</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">A MOMENT FOR YOU</p>
+    <h1>How are you feeling today?</h1>
+    <p class="intro">Take a little pause. Choose the mood that fits right now.</p>
+
+    <div class="mood-buttons" role="group" aria-label="Choose your mood">
+      <button type="button" data-mood="calm" aria-pressed="false">Calm</button>
+      <button type="button" data-mood="overwhelmed" aria-pressed="false">Overwhelmed</button>
+      <button type="button" data-mood="tired" aria-pressed="false">Tired</button>
+    </div>
+
+    <p id="message" role="status" aria-live="polite">Whatever you're feeling, there's room for it here.</p>
+    <p class="note">You can check in again whenever your mood changes.</p>
+  </main>
+</body>
+</html>
